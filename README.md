@@ -1,6 +1,8 @@
-# Bank of Atlantic – Full-Stack Banking POC
+# Bank of Atlantic
 
-A small but opinionated full-stack banking prototype that models customers, accounts, and role-based operations over a PostgreSQL backing store.
+## About
+
+Proof of concept for a banking application that models customers, accounts, and role-based operations over a PostgreSQL backing store.
 
 The project is split into:
 
