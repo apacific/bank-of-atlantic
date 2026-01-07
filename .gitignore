@@ -1,0 +1,257 @@
+# ==========================================
+# Banking POC - .gitignore
+# ==========================================
+
+# ============================================
+# Frontend (Node.js / Vue 3 / Vite)
+# ============================================
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+frontend/dist/
+frontend/build/
+frontend/.nuxt/
+frontend/coverage/
+
+# Dev environment
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+frontend/.vite/
+
+# IDE
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+frontend/coverage/
+.nyc_output/
+*.lcov
+
+# Logs
+frontend/logs/
+frontend/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temp files
+frontend/tmp/
+frontend/temp/
+
+# ============================================
+# Backend (.NET / C#)
+# ============================================
+
+# Build artifacts
+backend/bin/
+backend/obj/
+backend/**/bin/
+backend/**/obj/
+
+# Build results
+backend/**/*.dll
+backend/**/*.pdb
+backend/**/*.so
+backend/**/*.dylib
+
+# Test Results
+TestResults/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+backend/tests/**/bin/
+backend/tests/**/obj/
+
+# Visual Studio / Rider
+.vs/
+.vscode/
+.idea/
+*.sln.iml
+*.user
+*.userprefs
+*.ncb
+*.aps
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj.VisualState.xml
+*.rsuser
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.ipch
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# ReSharper / CodeRush
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.resharper
+riderModule.iml
+
+# NuGet
+*.nupkg
+*.nupkg.metadata
+*.snupkg
+.nuget/
+nuget.config
+
+# Entity Framework Core migrations (optional - include if you want local-only migrations)
+# backend/src/Banking.Infrastructure/Migrations/
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+*.mdf
+*.ldf
+
+# Configuration files with secrets
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+.env
+.env.local
+secrets.json
+
+# ============================================
+# Docker
+# ============================================
+
+# Docker compose overrides
+docker-compose.override.yml
+
+# ============================================
+# OS-specific
+# ============================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+
+# macOS
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================
+# IDE-specific
+# ============================================
+
+# Visual Studio Code
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/extensions.json
+*.code-workspace
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Atom
+.atom/
+
+# IntelliJ
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ============================================
+# Common Development Files
+# ============================================
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.bak
+*.backup
+*.swp
+*.swo
+
+# OS locks
+.lock
+
+# ============================================
+# CI/CD
+# ============================================
+
+# GitHub Actions
+.github/workflows/cache/
+
+# ============================================
+# Project-specific
+# ============================================
+
+# Local development overrides
+local.settings.json
+local.env
+
+# Generated files that shouldn't be committed
+generated/
+.generated/
+
+# Backup files
+*.backup
+*.old
+
+# ============================================
+# Keep these files (whitelist)
+# ============================================
+
+# Keep configuration templates
+!.editorconfig
+!.eslintrc.cjs
+!.prettierrc.json
+!docker-compose.yml
+!.env.example
+!.env.template

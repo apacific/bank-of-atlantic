@@ -1,0 +1,77 @@
+/* Global root styles and color variables */
+:root {
+  background: #fbfbfb;
+  color: #111;
+  font-family: "Archopada", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Border box sizing for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default body margin */
+body {
+  margin: 0;
+}
+
+/* Default heading size */
+h1 {
+  font-size: 26px;
+  margin: 0;
+}
+
+/* Custom font face - Archopada Rounded SemiBold */
+@font-face {
+  font-display: swap;
+  font-family: "ArchopadaRoundedSemBd";
+  font-style: oblique;
+  src: url("./fonts/Archopada_Rounded_Oblique-SemBd.ttf") format("truetype");
+}
+
+/* Custom font face - Archopada Rounded Black */
+@font-face {
+  font-display: swap;
+  font-family: "ArchopadaRoundedBold";
+  font-style: oblique;
+  src: url("./fonts/Archopada_Rounded_Oblique-Black.ttf") format("truetype");
+}
+
+/* Custom font face - Rubik Medium */
+@font-face {
+  font-display: swap;
+  font-family: "RubikMedium";
+  font-style: normal;
+  src: url("./fonts/Rubik-Medium.ttf") format("truetype");
+}
+
+/* Font family CSS custom properties */
+:root {
+  --font-body: "RubikMedium", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-header-title: "ArchopadaRoundedBold", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-headings: "ArchopadaRoundedSemBd", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Apply body font to html and body elements */
+html,
+body {
+  font-family: var(--font-body);
+}
+
+/* Ensure form inputs inherit font family */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Apply heading font to all heading elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
+}
