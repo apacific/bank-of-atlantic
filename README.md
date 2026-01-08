@@ -1,5 +1,7 @@
 # Bank of Atlantic
-
+BA logo            |  Bank of Atlantic logo
+:-------------------------:|:-------------------------:
+![](https://link-1-.png)  |  ![](https://...link-2-.png)
 ## About
 
 Proof of concept for a banking application that models customers, accounts, and role-based operations over a PostgreSQL backing store.
