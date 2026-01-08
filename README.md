@@ -494,11 +494,13 @@ Tests  8+ passed (8+)
 ## Troubleshooting
 
 ### "Port already in use"
+- Find and kill process using port 5185 (API):
 ```bash
-# Find and kill process using port 5185 (API)
 lsof -i :5185 | grep LISTEN | awk '{print $2}' | xargs kill
+```
+- Or use docker:
 
-# Or use docker
+```bash
 docker ps -a | grep banking-db
 docker stop banking-db
 docker rm banking-db
@@ -509,36 +511,41 @@ docker rm banking-db
 - Tests will still pass
 
 ### "Database unavailable" or "Service unavailable" errors during tests
-- This occurs when running all tests in parallel (connection pool exhaustion)
+- This occurs when running all tests in parallel (connection pool exhaustion).
 - **Solution**: Run test suites separately (see steps above)
 - Connection pool has been configured with `Maximum Pool Size=20; Minimum Pool Size=5`
 
 ### "ChromeDriver version mismatch"
 ```bash
 cd backend/tests/Banking.Api.E2ETests
+
 dotnet add package Selenium.WebDriver.ChromeDriver --force
 ```
 
-### Database connection refused
+### "Database connection refused"
+- Check Docker:
 ```bash
-# Check Docker
 docker ps
-# Verify connection on port 5433
-nc -zv localhost 5433
-# Restart if needed
-docker stop banking-db
-docker rm banking-db
-# Then re-run the docker run command from Step 1
 ```
+- Verify connection on port 5433:
+```bash
+nc -zv localhost 5433
+```
+- Restart if needed
+```bash
+docker stop banking-db
 
+docker rm banking-db
+```
+- Then re-run the docker run command from Step 1.
 ---
 
 ## Resources
 
+- [Docker Documentation](https://docs.docker.com/)
 - [xUnit Documentation](https://xunit.net/docs/getting-started)
 - [Vitest Documentation](https://vitest.dev/)
 - [Selenium Documentation](https://www.selenium.dev/documentation/)
 - [Vue Test Utils](https://test-utils.vuejs.org/)
-
 ---
 
