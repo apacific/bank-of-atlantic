@@ -151,19 +151,19 @@ frontend/
 
 ### 1. Get the code
 
-Clone the repository (recommended):
+**Clone the repository** (recommended):
 
 ```bash
 git clone https://github.com/apacific/bank-of-atlantic.git  
-
+```
+Navigate to the project root directory:
+```bash
 cd banking-poc/
 ```
-Or download the .zip from GitHub: `https://github.com/apacific/bank-of-atlantic/archive/refs/heads/main.zip`
+Or **download the .zip archive from GitHub:** `https://github.com/apacific/bank-of-atlantic/archive/refs/heads/main.zip`
 
 Extract it somewhere convenient.
-Navigate to the extracted folder.
-
-From here, all paths are relative to the repository root.
+Navigate to the extracted folder. From here, all paths are relative to the repository root.
 
 ### 2. Start PostgreSQL via Docker
 From the backend/ directory:
