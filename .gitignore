@@ -13,39 +13,36 @@ yarn.lock
 pnpm-lock.yaml
 
 # Build outputs
+dist/
+dist-ssr/
 frontend/dist/
 frontend/build/
 frontend/.nuxt/
 frontend/coverage/
 
 # Dev environment
-frontend/.env
-frontend/.env.local
-frontend/.env.*.local
+.env
+.env.local
+.env.*.local
 frontend/.vite/
 
-# IDE
-.vscode/
-!.vscode/extensions.json
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-
 # Testing
-frontend/coverage/
 .nyc_output/
 *.lcov
 
 # Logs
-frontend/logs/
-frontend/*.log
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Temp files
+*.local
+*.tmp
+*.temp
 frontend/tmp/
 frontend/temp/
 
@@ -72,62 +69,12 @@ TestResults/
 backend/tests/**/bin/
 backend/tests/**/obj/
 
-# Visual Studio / Rider
-.vs/
-.vscode/
-.idea/
-*.sln.iml
-*.user
-*.userprefs
-*.ncb
-*.aps
-*.vcxproj.user
-*.vcxproj.filters
-*.vcxproj.VisualState.xml
-*.rsuser
-*_i.c
-*_p.c
-*_h.h
-*.ilk
-*.meta
-*.obj
-*.iobj
-*.pch
-*.ipch
-*.pgc
-*.pgd
-*.rsp
-*.sbr
-*.tlb
-*.tli
-*.tlh
-*.tmp
-*.tmp_proj
-*_wpftmp.csproj
-*.log
-*.vspscc
-*.vssscc
-.builds
-*.pidb
-*.svclog
-*.scc
-
-# ReSharper / CodeRush
-_ReSharper*/
-*.[Rr]e[Ss]harper
-*.DotSettings.user
-.resharper
-riderModule.iml
-
 # NuGet
 *.nupkg
 *.nupkg.metadata
 *.snupkg
 .nuget/
 nuget.config
-
-# Entity Framework Core migrations (optional - include if you want local-only migrations)
-# backend/src/Banking.Infrastructure/Migrations/
 
 # Local database files
 *.db
@@ -140,27 +87,99 @@ nuget.config
 appsettings.Development.json
 appsettings.Production.json
 appsettings.Staging.json
-.env
-.env.local
 secrets.json
 
 # ============================================
-# Docker
+# IDE-specific (consolidated)
 # ============================================
 
-# Docker compose overrides
-docker-compose.override.yml
+# Visual Studio Code
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+
+# Visual Studio / Rider
+.vs/
+.idea/
+.resharper
+riderModule.iml
+*.sln.iml
+
+# Visual Studio build files
+*.suo
+*.user
+*.userprefs
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# C++ / VC++ specific
+*.aps
+*.dsp
+*.dsw
+*.ilk
+*.iobj
+*.ipch
+*.meta
+*.ncb
+*.obj
+*.pch
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.sln
+*.sw?
+*.tli
+*.tlb
+*.tmp
+*.tmp_proj
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj.VisualState.xml
+*_h.h
+*_i.c
+*_p.c
+*_wpftmp.csproj
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# ReSharper / CodeRush
+*.DotSettings.user
+
+# Other editors
+.atom/
+.sublime-project
+.sublime-workspace
+
+# IntelliJ
+*.iml
+*.iws
+*.ipr
+
+# NetBeans
+nbproject/private/
+.nb-gradle/
+
+# IDE project files
+*.ntvs*
+*.njsproj
 
 # ============================================
 # OS-specific
 # ============================================
 
 # Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+.DS_Store
+.lock
 $RECYCLE.BIN/
 *.cab
+Desktop.ini
+Thumbs.db
+ehthumbs.db
 
 # macOS
 .AppleDouble
@@ -174,81 +193,39 @@ $RECYCLE.BIN/
 .Trash-*
 
 # ============================================
-# IDE-specific
+# Docker
 # ============================================
 
-# Visual Studio Code
-.vscode/settings.json
-.vscode/launch.json
-.vscode/tasks.json
-.vscode/extensions.json
-*.code-workspace
-
-# Sublime Text
-*.sublime-workspace
-*.sublime-project
-
-# Atom
-.atom/
-
-# IntelliJ
-*.iml
-*.iws
-*.ipr
-.idea/
-
-# NetBeans
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-
-# ============================================
-# Common Development Files
-# ============================================
-
-# Temporary files
-*.tmp
-*.temp
-*~
-*.bak
-*.backup
-*.swp
-*.swo
-
-# OS locks
-.lock
+docker-compose.override.yml
 
 # ============================================
 # CI/CD
 # ============================================
 
-# GitHub Actions
 .github/workflows/cache/
+
+# ============================================
+# Backup & Generated Files
+# ============================================
+
+*.backup
+*.bak
+*.old
+*~
+generated/
+.generated/
 
 # ============================================
 # Project-specific
 # ============================================
 
-# Local development overrides
 local.settings.json
 local.env
 
-# Generated files that shouldn't be committed
-generated/
-.generated/
-
-# Backup files
-*.backup
-*.old
-
 # ============================================
-# Keep these files (whitelist)
+# Whitelist - Keep these files
 # ============================================
 
-# Keep configuration templates
 !.editorconfig
 !.eslintrc.cjs
 !.prettierrc.json

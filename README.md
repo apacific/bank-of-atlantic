@@ -9,8 +9,6 @@ The project is split into:
 - `backend/` – ASP.NET Core Web API (C#, .NET 9, EF Core, Identity, JWT)
 - `frontend/` – Vue 3 + TypeScript SPA (Vite, Vue Router, Axios)
 
-The goal is to demonstrate a realistic architecture and a non-trivial feature set rather than a trivial CRUD sample.
-
 ---
 
 ## Features
@@ -149,6 +147,195 @@ frontend/
     assets/fonts/           # custom fonts
   .env                      # Vite API base URL
 ```
+## Setup & Run
+
+### 1. Get the code
+
+Clone the repository (recommended):
+
+```bash
+git clone https://github.com/apacific/bank-of-atlantic.git  
+
+cd <your-repo>
+```
+Or download the .zip from GitHub: `https://github.com/apacific/bank-of-atlantic/archive/refs/heads/main.zip`
+
+Extract it somewhere convenient.
+Navigate to the extracted folder.
+
+From here, all paths are relative to the repository root.
+
+### 2. Start PostgreSQL via Docker
+From the backend/ directory:
+
+```bash
+cd backend
+
+docker compose up -d
+```
+By default, `docker-compose.yml` spins up:
+
+```
+Host: 127.0.0.1
+
+Port: 5433
+
+Database: banking
+
+Username: banking
+
+Password: banking
+```
+
+You can verify the container is running:
+
+```bash
+docker ps
+```
+You should see a postgres:16 container with port 5433->5432.
+
+### 3. Restore and build the backend
+Still in `backend/`:
+
+```bash
+dotnet restore
+
+dotnet build
+```
+
+If you do not already have the EF Core CLI installed:
+
+```bash
+dotnet tool install -g dotnet-ef
+```
+
+### 4. Apply database migrations
+Make sure the API uses the Development profile so it picks up appsettings.Development.json with the correct connection string.
+
+On PowerShell:
+
+```powershell
+$env:ASPNETCORE_ENVIRONMENT = "Development"
+```
+On bash/zsh:
+
+```bash
+export ASPNETCORE_ENVIRONMENT=Development
+```
+Apply migrations for the application context:
+
+```bash
+dotnet ef database update \
+  --project src/Banking.Infrastructure \
+  --startup-project src/Banking.Api \
+  --context BankingDbContext
+```
+
+Apply migrations for the Identity context:
+
+```bash
+dotnet ef database update \
+  --project src/Banking.Infrastructure \
+  --startup-project src/Banking.Api \
+  --context BankingIdentityDbContext
+  ```
+
+At this point the banking database should have tables for both the domain (Customers, Accounts, etc.) and Identity (AspNetUsers, AspNetRoles, etc.).
+
+### 5. Run the backend API
+From `backend/`:
+
+```bash
+dotnet run --project src/Banking.Api
+```
+
+You should see log output similar to:
+```
+Now listening on: http://localhost:5185
+
+Application started. Press Ctrl+C to shut down.
+
+Swagger (in Development) will be available at:
+
+http://localhost:5185/swagger
+```
+
+### 6. Configure and run the frontend
+In a separate terminal, from the repository root:
+
+```bash
+cd frontend
+```
+
+Create a .env file if it does not exist:
+
+```bash
+echo VITE_API_BASE_URL=http://localhost:5185 > .env
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the dev server:
+
+```bash
+npm run dev
+```
+
+You should see something like:
+
+```
+VITE v7.x.x  ready in ...
+  ➜  Local:   http://localhost:5173/
+
+Open http://localhost:5173 in your browser.
+```
+
+### 7. Log in and run the app
+The API seeds two Identity users based on appsettings.json:
+
+- Manager
+    - Email: `manager@atlantic.local`
+    - Password: `Passw0rd!123`
+    - Role: `Manager`
+
+- Employee
+    - Email: `employee@atlantic.local`
+    - Password: `Passw0rd!`
+    - Role: `Employee`
+
+From the browser:
+
+1. Navigate to `http://localhost:5173/login` (unauthenticated users are redirected there automatically).
+
+2. Log in using one of the seeded accounts.
+
+3. You should be redirected to `/customers`.
+
+4. From there you can:
+
+    - Create customers.
+
+    - Create accounts for a customer (with initial balance or available credit).
+
+    - View account details.
+
+    - As a Manager, delete accounts that satisfy the business rules.
+
+If any request fails with `Network error` from the frontend, confirm:
+
+The API is running on `http://localhost:5185`.
+
+PostgreSQL is running on `127.0.0.1:5433`.
+
+`VITE_API_BASE_URL` is correctly set to the API URL.
+
+CORS in `Program.cs` includes `http://localhost:5173` as an allowed origin.
+
+Once those are in place, the full stack should run locally with `docker compose up`, `dotnet run`, and `npm run dev`.
 
 ---
 ## Testing
