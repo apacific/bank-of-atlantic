@@ -1,7 +1,7 @@
 # Bank of Atlantic
 BA logo            |  Bank of Atlantic logo
 :-------------------------:|:-------------------------:
-<img src="https://github.com/apacific/bank-of-atlantic/blob/main/ba-logo.png?raw=true" style="width:575; height:auto;">  |  <img src="https://github.com/apacific/bank-of-atlantic/blob/main/bank-logo.png?raw=true" style="width:575; height:auto;">
+<img src="https://github.com/apacific/bank-of-atlantic/blob/main/ba-logo.png?raw=true" style="height:575;">  |  <img src="https://github.com/apacific/bank-of-atlantic/blob/main/bank-logo.png?raw=true" style="height:575;">
 
 ## About
 
