@@ -156,7 +156,7 @@ Clone the repository (recommended):
 ```bash
 git clone https://github.com/apacific/bank-of-atlantic.git  
 
-cd <your-repo>
+cd banking-poc/
 ```
 Or download the .zip from GitHub: `https://github.com/apacific/bank-of-atlantic/archive/refs/heads/main.zip`
 
