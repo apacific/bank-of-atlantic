@@ -537,7 +537,15 @@ docker stop banking-db
 
 docker rm banking-db
 ```
-- Then re-run the docker run command from Step 1.
+- Then re-run the docker command from Step 1:
+```bash
+docker run -d --name banking-db \
+  -e POSTGRES_USER=banking \
+  -e POSTGRES_PASSWORD=banking \
+  -e POSTGRES_DB=banking \
+  -p 5433:5432 \
+  postgres:16-alpine
+```
 ---
 
 ## Resources
