@@ -400,8 +400,6 @@ cd backend
 dotnet test tests/Banking.Api.E2ETests/Banking.Api.E2ETests.csproj
 ```
 
----
-
 ## Run All Tests At Once
 
 To run all tests together (may see database connection warnings during parallel execution):
@@ -413,7 +411,6 @@ dotnet test
 
 It's recommended to run test suites separately (as shown above) for cleaner output, and to avoid connection pool exhaustion.
 
----
 
 ## What's Being Tested
 
@@ -425,7 +422,6 @@ It's recommended to run test suites separately (as shown above) for cleaner outp
 | Frontend Components | 77 | Vue components |
 | E2E Selenium | 8+ | User workflows |
 
----
 
 ## Common Commands
 
@@ -471,7 +467,6 @@ npm run test:unit
 npm run test:unit -- --coverage
 ```
 
----
 
 ## Expected Results
 
@@ -493,7 +488,6 @@ Test Files  2 passed (2)
 Tests  8+ passed (8+)
 ```
 
----
 
 ## Troubleshooting
 
@@ -560,4 +554,3 @@ docker run -d --name banking-db \
 - [Selenium Documentation](https://www.selenium.dev/documentation/)
 - [Vue Test Utils](https://test-utils.vuejs.org/)
 ---
-
