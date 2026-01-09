@@ -1,11 +1,11 @@
 # Bank of Atlantic
+## About
+
+Proof of concept for a banking application that models customers, accounts, and role-based operations over a PostgreSQL backing store.
 BA logo            |  Bank of Atlantic logo
 :-------------------------:|:-------------------------:
 <img src="https://github.com/apacific/bank-of-atlantic/blob/main/ba-logo.png?raw=true" width="333" height="333">  |  <img src="https://github.com/apacific/bank-of-atlantic/blob/main/bank-logo.png?raw=true" width="333" height="333">
 
-## About
-
-Proof of concept for a banking application that models customers, accounts, and role-based operations over a PostgreSQL backing store.
 
 The project is split into:
 
