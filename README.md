@@ -150,6 +150,7 @@ frontend/
     assets/fonts/           # custom fonts
   .env                      # Vite API base URL
 ```
+---
 ## Setup & Run
 
 ### 1. Get the code
