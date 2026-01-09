@@ -331,13 +331,13 @@ From the browser:
 
 If any request fails with `Network error` from the frontend, confirm:
 
-The API is running on `http://localhost:5185`.
+- The API is running on `http://localhost:5185`.
 
-PostgreSQL is running on `127.0.0.1:5433`.
+- PostgreSQL is running on `127.0.0.1:5433`.
 
-`VITE_API_BASE_URL` is correctly set to the API URL.
+- `VITE_API_BASE_URL` is correctly set to the API URL.
 
-CORS in `Program.cs` includes `http://localhost:5173` as an allowed origin.
+- CORS in `Program.cs` includes `http://localhost:5173` as an allowed origin.
 
 Once those are in place, the full stack should run locally with `docker compose up`, `dotnet run`, and `npm run dev`.
 
