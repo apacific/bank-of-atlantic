@@ -400,7 +400,7 @@ cd backend
 dotnet test tests/Banking.Api.E2ETests/Banking.Api.E2ETests.csproj
 ```
 
-### **Run All Tests At Once**
+### Run All Tests At Once
 
 To run all tests together (may see database connection warnings during parallel execution):
 
@@ -425,7 +425,7 @@ It's recommended to run test suites separately (as shown above) for cleaner outp
 
 ### **Common Commands**
 
-### Backend
+#### Backend
 ```bash
 # Build
 dotnet build
@@ -452,7 +452,7 @@ dotnet test --filter "Name=Login_WithValidCredentials_ShouldNavigateToCustomersP
 dotnet test --verbosity detailed
 ```
 
-### Frontend
+#### Frontend
 ```bash
 # Install dependencies
 npm install
@@ -470,19 +470,19 @@ npm run test:unit -- --coverage
 
 ### **Expected Results**
 
-### Backend Tests
+#### Backend Tests
 ```
 Test Files  5 passed (5)
 Tests  35 passed (35)
 ```
 
-### Frontend Tests
+#### Frontend Tests
 ```
 Test Files  7 passed (7)
 Tests  77 passed (77)
 ```
 
-### E2E Tests (with services running)
+#### E2E Tests (with services running)
 ```
 Test Files  2 passed (2)
 Tests  8+ passed (8+)
@@ -491,7 +491,7 @@ Tests  8+ passed (8+)
 
 ### **Troubleshooting**
 
-### "Port already in use"
+#### "Port already in use"
 - Find and kill process using port 5185 (API):
 ```bash
 lsof -i :5185 | grep LISTEN | awk '{print $2}' | xargs kill
@@ -504,23 +504,23 @@ docker stop banking-db
 docker rm banking-db
 ```
 
-### "No match found for location" (E2E Tests)
+#### "No match found for location" (E2E Tests)
 - This is a Vue Router warning, safe to ignore
 - Tests will still pass
 
-### "Database unavailable" or "Service unavailable" errors during tests
+#### "Database unavailable" or "Service unavailable" errors during tests
 - This occurs when running all tests in parallel (connection pool exhaustion).
 - **Solution**: Run test suites separately (see steps above)
 - Connection pool has been configured with `Maximum Pool Size=20; Minimum Pool Size=5`
 
-### "ChromeDriver version mismatch"
+#### "ChromeDriver version mismatch"
 ```bash
 cd backend/tests/Banking.Api.E2ETests
 
 dotnet add package Selenium.WebDriver.ChromeDriver --force
 ```
 
-### "Database connection refused"
+#### "Database connection refused"
 - Check Docker:
 ```bash
 docker ps
