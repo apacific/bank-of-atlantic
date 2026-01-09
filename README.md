@@ -400,7 +400,7 @@ cd backend
 dotnet test tests/Banking.Api.E2ETests/Banking.Api.E2ETests.csproj
 ```
 
-## Run All Tests At Once
+### **Run All Tests At Once**
 
 To run all tests together (may see database connection warnings during parallel execution):
 
@@ -412,7 +412,7 @@ dotnet test
 It's recommended to run test suites separately (as shown above) for cleaner output, and to avoid connection pool exhaustion.
 
 
-## What's Being Tested
+### **What's Being Tested**
 
 | Test Type | Count | Purpose |
 |-----------|-------|---------|
@@ -423,7 +423,7 @@ It's recommended to run test suites separately (as shown above) for cleaner outp
 | E2E Selenium | 8+ | User workflows |
 
 
-## Common Commands
+### **Common Commands**
 
 ### Backend
 ```bash
@@ -468,7 +468,7 @@ npm run test:unit -- --coverage
 ```
 
 
-## Expected Results
+### **Expected Results**
 
 ### Backend Tests
 ```
@@ -489,7 +489,7 @@ Tests  8+ passed (8+)
 ```
 
 
-## Troubleshooting
+### **Troubleshooting**
 
 ### "Port already in use"
 - Find and kill process using port 5185 (API):
