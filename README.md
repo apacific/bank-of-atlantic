@@ -256,11 +256,8 @@ dotnet run --project src/Banking.Api
 You should see log output similar to:
 ```
 Now listening on: http://localhost:5185
-
 Application started. Press Ctrl+C to shut down.
-
 Swagger (in Development) will be available at:
-
 http://localhost:5185/swagger
 ```
 
